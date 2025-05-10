@@ -5,8 +5,9 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.json
-    content = data.get('content', {}).get('text', '')
     print(f"受信データ: {content}") 
+    content = data.get('content', {}).get('text', '')
+    print(f"受信テキスト: {content}") 
     if content.count('-') >= 3:
         channel_id = content.strip()
         link = f"https://line.worksmobile.com/message/send?version=26&channelId={channel_id}"
