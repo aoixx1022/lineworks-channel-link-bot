@@ -16,11 +16,8 @@ def webhook():
         reply_text = "チャンネルIDの形式が正しくありません。"
 
     return jsonify({
-        "content": {
-            "type": "text",
-            "text": reply_text
-        }
-    })
+    "text": reply_text
+})
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
