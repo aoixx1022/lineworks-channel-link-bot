@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.json
-    print(f"受信データ: {date}") 
+    print(f"受信データ: {data}") 
     content = data.get('content', {}).get('text', '')
     print(f"受信テキスト: {content}") 
     if content.count('-') >= 3:
